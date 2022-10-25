@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  mysql:
+    build: .
+    restart: always
+    environment:
+      MYSQL_DATABASE: glpi_bkp
+      MYSQL_ROOT_PASSWORD: thmpv77d6f
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - glpi-mysql:/var/lib/mysql
+
+volumes:
+  glpi-mysql:
